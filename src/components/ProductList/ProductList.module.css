@@ -1,0 +1,9 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  flex-basis: 78%;
+  height: 100%;
+  padding: 0 5px;
+  overflow: auto;
+}

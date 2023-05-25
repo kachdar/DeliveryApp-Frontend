@@ -1,0 +1,10 @@
+.shops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 20%;
+  padding: 15px;
+}
+.shop-list {
+  width: 100%;
+}

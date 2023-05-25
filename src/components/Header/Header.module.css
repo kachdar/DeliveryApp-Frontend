@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.logo {
+  width: 100px;
+}
+.nav {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.nav a {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 100%;
+  color: #5e5e5c;
+  font-weight: 700;
+  padding: 5px;
+}
