@@ -1,5 +1,5 @@
 import styles from './ShopList.module.css';
-import Card from '../../shared/Card';
+import Card from '../../shared/Card/Card';
 import Loader from '../Loader/Loader';
 import Message from '../Message/Message';
 import { useGetShopsQuery } from '../../slices/shopsApiSlice';
