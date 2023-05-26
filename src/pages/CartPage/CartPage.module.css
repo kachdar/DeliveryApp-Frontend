@@ -6,9 +6,23 @@
   padding: 10px;
 }
 .total {
-  background: #b03532;
   grid-column: 1 / span 2;
   grid-row: 2;
   display: flex;
   justify-content: end;
+  align-items: center;
+}
+.total p {
+  margin-bottom: 0;
+  font-size: 2em;
+}
+.total button {
+  margin: 0 40px;
+  background-color: #8db55f;
+  border: 1px solid #eee;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
 }

@@ -6,7 +6,7 @@ const OrderForm = () => {
   return (
     <Card className={styles.form}>
       <h2>Please fill in all fields</h2>
-      <form>
+      <form id="user-info">
         <Input type="text" placeholder="Enter your name" />
         <Input type="email" placeholder="Enter your email" />
         <Input type="phone" placeholder="Enter your phone number" />
