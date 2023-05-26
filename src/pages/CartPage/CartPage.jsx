@@ -1,5 +1,7 @@
+import Loader from '../../components/Loader/Loader';
+
 const CartPage = () => {
-  return <div>CartPage</div>;
+  return <Loader />;
 };
 
 export default CartPage;
