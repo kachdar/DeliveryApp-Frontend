@@ -14,7 +14,9 @@ const ProductList = () => {
     return (
       <Message variant="danger">{error?.data?.message || error.error}</Message>
     );
-  else if (data)
+  else if (data.length === 0)
+    return <p className={styles.error}>Sorry, there are no items available here. </p>;
+  else
     return (
       <div className={styles.products}>
         {data.map((product) => (

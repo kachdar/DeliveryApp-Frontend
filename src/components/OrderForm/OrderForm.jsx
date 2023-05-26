@@ -5,6 +5,7 @@ import styles from './OrderForm.module.css';
 const OrderForm = () => {
   return (
     <Card className={styles.form}>
+      <h2>Please fill in all fields</h2>
       <form>
         <Input type="text" placeholder="Enter your name" />
         <Input type="email" placeholder="Enter your email" />

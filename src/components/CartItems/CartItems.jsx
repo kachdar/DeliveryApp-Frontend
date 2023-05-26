@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import styles from './CartItems.module.css';
-import Card from '../../shared/Card/Card';
+import CartItem from '../CartItem/CartItem';
 
 const CartItems = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -8,10 +8,7 @@ const CartItems = () => {
   return (
     <div className={styles.items}>
       {cartItems.map((item) => (
-        <Card>
-          <img src={item.imageUrl} alt="" />
-          <h3>{item.name}</h3>
-        </Card>
+        <CartItem item={item} />
       ))}
     </div>
   );
