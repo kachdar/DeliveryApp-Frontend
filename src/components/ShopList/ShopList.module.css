@@ -4,6 +4,7 @@
   align-items: center;
   flex-basis: 20%;
   padding: 15px;
+  overflow: auto;
 }
 .shop-list {
   width: 100%;
