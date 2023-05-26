@@ -3,7 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   flex-basis: 78%;
-  height: 100%;
+  align-items: start;
   padding: 0 5px;
   overflow: auto;
 }

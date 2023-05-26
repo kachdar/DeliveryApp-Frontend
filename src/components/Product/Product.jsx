@@ -1,6 +1,7 @@
 import styles from './Product.module.css';
 import Card from './../../shared/Card/Card';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaShoppingCart, FaCartPlus } from 'react-icons/fa';
 import { addToCart } from '../../slices/cartSlice';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -29,9 +30,19 @@ const Product = ({ product }) => {
     <Card className={styles.product}>
       <img src={imageUrl} alt="" />
       <h3>{name}</h3>
-      <p>{price}</p>
-      {!isAdded && <button onClick={addToCartHandler}>Add to Cart</button>}
-      {isAdded && <button onClick={goToCartHandler}>Open Cart</button>}
+      <div>
+        <p className={styles.price}>{price}$</p>
+        {!isAdded && (
+          <button className={styles['cart-btn']} onClick={addToCartHandler}>
+            <FaShoppingCart />
+          </button>
+        )}
+        {isAdded && (
+          <button className={styles['cart-btn']} onClick={goToCartHandler}>
+            <FaCartPlus />
+          </button>
+        )}
+      </div>
     </Card>
   );
 };

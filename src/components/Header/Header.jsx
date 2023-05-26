@@ -15,7 +15,9 @@ const Header = () => {
         </Link>
         <nav className={styles.nav}>
           <NavLink to="/">Shop</NavLink>
-          <NavLink to="/checkout">Shopping Cart {totalAmount}</NavLink>
+          <NavLink to="/checkout">
+            Shopping Cart <span>{totalAmount}</span>
+          </NavLink>
         </nav>
       </header>
       <Outlet />
