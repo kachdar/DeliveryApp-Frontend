@@ -1,0 +1,28 @@
+.result {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+.icon {
+  font-size: 100px;
+  color: #8db55f;
+}
+.result h3 {
+  font-size: 20px;
+  color: #40532b;
+  font-weight: 700;
+}
+.result p {
+  color: #5e5e5c;
+}
+.result a {
+  padding: 10px 20px;
+  background-color: #8db55f;
+  color: #fafafa;
+  font-weight: 500;
+  border-radius: 2px;
+}
