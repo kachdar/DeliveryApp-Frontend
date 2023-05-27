@@ -53,6 +53,13 @@ const cartSlice = createSlice({
       state.cartItems = state.cartItems.filter((x) => x.id !== action.payload);
       return updateCart(state);
     },
+    clearCartItems: (state, action) => {
+      state.cartItems = [];
+      state.totalAmount = 0;
+      state.totalPrice = 0;
+      state.activeShopId = 10;
+      localStorage.setItem('cart', JSON.stringify(state));
+    },
   },
 });
 
@@ -61,7 +68,8 @@ export const {
   changeActiveShop,
   increaseItemQuantity,
   decreaseItemQuantity,
-  removeFromCart
+  removeFromCart,
+  clearCartItems,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

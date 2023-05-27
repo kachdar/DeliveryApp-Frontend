@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import Card from '../../shared/Card/Card';
 import Input from '../../shared/Input/Input';
-import SimpleMap from '../GoogleMap/GoogleMap';
+import Map from '../GoogleMap/GoogleMap';
 import styles from './OrderForm.module.css';
+import { useCreateOrderMutation } from '../../slices/ordersApiSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { clearCartItems } from '../../slices/cartSlice';
 
 const isValidEmail = (email) => {
   const regex =
@@ -18,6 +22,11 @@ const OrderForm = () => {
     phone: '',
     address: '',
   });
+
+  const { totalPrice, cartItems } = useSelector((state) => state.cart);
+  const [createOrder] = useCreateOrderMutation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const validationRules = {
     name: !!userInfo.name && userInfo.name.match(/^ *$/) === null,
@@ -38,19 +47,26 @@ const OrderForm = () => {
     setUserInfo({ ...userInfo, [field.name]: field.value });
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     const isValidForm = Object.values(validationRules).every((key) => key);
 
-    if (isValidForm) {
-      console.log('done');
+    if (isValidForm && cartItems.length !== 0) {
+      const orderItems = cartItems.map((item) => ({
+        product: item,
+        quantity: item.qty,
+      }));
+      const order = { ...userInfo, totalPrice, orderItems };
+      await createOrder(order).unwrap();
+      dispatch(clearCartItems());
+      navigate('/success');
     }
   };
 
   return (
     <Card className={styles.form}>
-      <SimpleMap />
+      <Map />
       <form id="cart-form" onSubmit={submitHandler}>
         <Input
           type="text"

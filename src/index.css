@@ -16,15 +16,16 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
 a.active {
   border-bottom: 4px solid #8db55f;
 }
-
 input:focus {
   border: none;
   outline: 1px solid #8db55f;
 }
-
 input.error {
   border: 1px solid #e01616;
   outline: none;

@@ -26,3 +26,11 @@
   font-size: 1.5em;
   cursor: pointer;
 }
+
+.total button:disabled,
+.total button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
