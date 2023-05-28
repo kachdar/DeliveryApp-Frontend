@@ -11,6 +11,10 @@ const router = createHashRouter([
     element: <Header />,
     children: [
       {
+        path: '/',
+        element: <ShopPage />,
+      },
+      {
         path: 'checkout',
         element: <CartPage />,
       },
