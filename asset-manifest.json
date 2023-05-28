@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/DeliveryApp-Frontend/static/css/main.4905e286.css",
+    "main.css": "/DeliveryApp-Frontend/static/css/main.830a0a6e.css",
     "main.js": "/DeliveryApp-Frontend/static/js/main.d7902585.js",
     "static/media/404.jpg": "/DeliveryApp-Frontend/static/media/404.2be8047aae5819440620.jpg",
     "static/media/logo.png": "/DeliveryApp-Frontend/static/media/logo.a64fcaec3e8a8b567dfd.png",
     "index.html": "/DeliveryApp-Frontend/index.html",
-    "main.4905e286.css.map": "/DeliveryApp-Frontend/static/css/main.4905e286.css.map",
+    "main.830a0a6e.css.map": "/DeliveryApp-Frontend/static/css/main.830a0a6e.css.map",
     "main.d7902585.js.map": "/DeliveryApp-Frontend/static/js/main.d7902585.js.map"
   },
   "entrypoints": [
-    "static/css/main.4905e286.css",
+    "static/css/main.830a0a6e.css",
     "static/js/main.d7902585.js"
   ]
 }
