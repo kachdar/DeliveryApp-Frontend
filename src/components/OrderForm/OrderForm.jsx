@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import Card from '../../shared/Card/Card';
-import Input from '../../shared/Input/Input';
-import Map from '../GoogleMap/GoogleMap';
+import { useState, useRef } from 'react';
+import GMap from '../GoogleMap/GMap';
+import Card from '../shared/Card/Card';
+import Input from '../shared/Input/Input';
 import styles from './OrderForm.module.css';
 import { useCreateOrderMutation } from '../../slices/ordersApiSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { clearCartItems } from '../../slices/cartSlice';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const isValidEmail = (email) => {
   const regex =
@@ -27,6 +28,7 @@ const OrderForm = () => {
   const [createOrder] = useCreateOrderMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const captchaRef = useRef(null);
 
   const validationRules = {
     name: !!userInfo.name && userInfo.name.match(/^ *$/) === null,
@@ -47,12 +49,19 @@ const OrderForm = () => {
     setUserInfo({ ...userInfo, [field.name]: field.value });
   };
 
+  const callback = () => {
+    console.log('Done!!!!');
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
 
     const isValidForm = Object.values(validationRules).every((key) => key);
 
     if (isValidForm && cartItems.length !== 0) {
+      const token = captchaRef.current.getValue();
+      captchaRef.current.reset();
+      console.log(token);
       const orderItems = cartItems.map((item) => ({
         product: item,
         quantity: item.qty,
@@ -66,7 +75,7 @@ const OrderForm = () => {
 
   return (
     <Card className={styles.form}>
-      <Map />
+      <GMap />
       <form id="cart-form" onSubmit={submitHandler}>
         <Input
           type="text"
@@ -99,6 +108,10 @@ const OrderForm = () => {
           placeholder="Enter delivery address"
           onChange={updateUserInfo}
           className={validate('address')}
+        />
+        <ReCAPTCHA
+          sitekey="6Leo80YmAAAAALhkPuoAIC8WCWNL-W6rfqZjdDYQ"
+          ref={captchaRef}
         />
       </form>
     </Card>

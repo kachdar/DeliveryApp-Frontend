@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 const CartPage = () => {
   const { totalPrice, cartItems } = useSelector((state) => state.cart);
 
+  // const token = captchaRef.current.getValue();
+
   return (
     <div className={styles.cart}>
       <OrderForm />

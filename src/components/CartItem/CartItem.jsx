@@ -1,5 +1,5 @@
 import styles from './CartItem.module.css';
-import Card from '../../shared/Card/Card';
+import Card from '../shared/Card/Card';
 import { FaPlus, FaMinus, FaTrash, FaTrashAlt } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import {

@@ -1,5 +1,5 @@
 import styles from './Product.module.css';
-import Card from './../../shared/Card/Card';
+import Card from '../shared/Card/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaShoppingCart, FaCartPlus } from 'react-icons/fa';
 import { addToCart } from '../../slices/cartSlice';
