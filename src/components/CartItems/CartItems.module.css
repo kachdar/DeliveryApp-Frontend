@@ -9,3 +9,8 @@
   text-align: center;
   color: #b4b0b0;
 }
+@media screen and (max-width: 840px) {
+  .items {
+    height: 100%;
+  }
+}

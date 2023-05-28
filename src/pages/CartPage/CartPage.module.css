@@ -32,3 +32,26 @@
   color: #666666;
   cursor: not-allowed;
 }
+
+@media screen and (max-width: 950px) {
+  .total p {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .cart {
+    grid-template-columns: auto;
+    grid-template-rows: 35rem auto auto;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .total p {
+    font-size: 1.2em;
+  }
+  .total button {
+    font-size: 1em;
+    padding: 7px;
+  }
+}

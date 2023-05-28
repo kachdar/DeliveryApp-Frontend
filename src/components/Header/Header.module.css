@@ -42,8 +42,3 @@
     flex-basis: 70%;
   }
 }
-@media screen and (max-width: 440px) {
-  .nav {
-    justify-content: space-around;
-  }
-}
