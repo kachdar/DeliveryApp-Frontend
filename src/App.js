@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import ShopPage from './pages/ShopPage/ShopPage';
 import CartPage from './pages/CartPage/CartPage';
@@ -8,7 +8,7 @@ import Header from './components/Header/Header';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<ShopPage />} />
@@ -17,7 +17,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
