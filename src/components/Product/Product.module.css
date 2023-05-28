@@ -1,7 +1,5 @@
 .product {
   padding: 10px;
-  min-width: 250px;
-  min-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

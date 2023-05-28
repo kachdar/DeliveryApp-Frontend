@@ -14,3 +14,21 @@
   text-align: center;
   color: #b4b0b0;
 }
+
+@media screen and (max-width: 1350px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .products {
+    grid-template-columns: auto;
+  }
+}
