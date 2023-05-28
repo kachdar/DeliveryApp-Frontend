@@ -25,7 +25,7 @@ const OrderForm = () => {
   });
 
   const { totalPrice, cartItems } = useSelector((state) => state.cart);
-  const [createOrder] = useCreateOrderMutation();
+  const [createOrder, { isLoading, isError }] = useCreateOrderMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const captchaRef = useRef(null);
@@ -49,25 +49,23 @@ const OrderForm = () => {
     setUserInfo({ ...userInfo, [field.name]: field.value });
   };
 
-  const callback = () => {
-    console.log('Done!!!!');
-  };
-
   const submitHandler = async (e) => {
     e.preventDefault();
 
     const isValidForm = Object.values(validationRules).every((key) => key);
 
     if (isValidForm && cartItems.length !== 0) {
-      const token = captchaRef.current.getValue();
+      const recaptcha = captchaRef.current.getValue();
       captchaRef.current.reset();
-      console.log(token);
+
       const orderItems = cartItems.map((item) => ({
         product: item,
         quantity: item.qty,
       }));
-      const order = { ...userInfo, totalPrice, orderItems };
-      await createOrder(order).unwrap();
+      const order = { ...userInfo, totalPrice, orderItems, recaptcha };
+      await createOrder(order);
+
+      // await createOrder(order).unwrap();
       dispatch(clearCartItems());
       navigate('/success');
     }
