@@ -28,7 +28,7 @@ const Product = ({ product }) => {
 
   return (
     <Card className={styles.product}>
-      <img src={imageUrl} alt="" />
+      <img src={`${process.env.PUBLIC_URL}/${imageUrl}`} alt="" />
       <h3>{name}</h3>
       <div>
         <p className={styles.price}>{price}$</p>

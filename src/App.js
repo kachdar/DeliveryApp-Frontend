@@ -1,11 +1,16 @@
+import Header from './components/Header/Header';
 import ShopPage from './pages/ShopPage/ShopPage';
 import CartPage from './pages/CartPage/CartPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
-import PlacedOrder from './pages/PlacedOrder/PlacedOrder';
-import Header from './components/Header/Header';
-import { RouterProvider, createHashRouter } from 'react-router-dom';
+import PlacedOrderPage from './pages/PlacedOrderPage/PlacedOrderPage';
+import {
+  RouterProvider,
+  createHashRouter,
+  createBrowserRouter,
+} from 'react-router-dom';
 
-const router = createHashRouter([
+// for Github Pages
+const hashRouter = createHashRouter([
   {
     path: '/',
     element: <Header />,
@@ -20,24 +25,43 @@ const router = createHashRouter([
       },
       {
         path: 'success',
-        element: <PlacedOrder />,
+        element: <PlacedOrderPage />,
+      },
+      {
+        path: '*',
+        element: <ErrorPage />,
+      },
+    ],
+  },
+]);
+
+const browserRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <Header />,
+    children: [
+      {
+        path: '/',
+        element: <ShopPage />,
+      },
+      {
+        path: 'checkout',
+        element: <CartPage />,
+      },
+      {
+        path: 'success',
+        element: <PlacedOrderPage />,
+      },
+      {
+        path: '*',
+        element: <ErrorPage />,
       },
     ],
   },
 ]);
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-    // <Routes>
-    //   <Route path="/" element={<Header />}>
-    //     <Route index element={<ShopPage />} />
-    //     <Route path="/checkout" element={<CartPage />} />
-    //     <Route path="/success" element={<PlacedOrder />} />
-    //     <Route path="*" element={<ErrorPage />} />
-    //   </Route>
-    // </Routes>
-  );
+  return <RouterProvider router={browserRouter} />;
 }
 
 export default App;

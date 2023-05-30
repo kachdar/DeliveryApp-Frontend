@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   font-family: 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
@@ -10,12 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 a {
   text-decoration: none;
 }

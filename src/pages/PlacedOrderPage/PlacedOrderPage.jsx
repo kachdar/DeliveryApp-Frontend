@@ -1,6 +1,6 @@
 import { FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import styles from './PlacedOrder.module.css';
+import styles from './PlacedOrderPage.module.css';
 
 const PlacedOrder = () => {
   return (

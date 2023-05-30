@@ -19,7 +19,7 @@ const CartItem = ({ item }) => {
         className={styles.trash}
         onClick={() => dispatch(removeFromCart(id))}
       />
-      <img src={imageUrl} alt="" />
+      <img src={`${process.env.PUBLIC_URL}/${imageUrl}`} alt="" />
       <div className={styles['item-info']}>
         <h3>{name}</h3>
         <span>{price}</span>

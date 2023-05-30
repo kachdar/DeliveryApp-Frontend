@@ -3,7 +3,7 @@ import { Loader } from '@googlemaps/js-api-loader';
 import { useSelector } from 'react-redux';
 
 const loader = new Loader({
-  apiKey: 'AIzaSyBrf_iF7zCqL484cqqZprk6wWXg7xoGQUQ',
+  apiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   version: 'weekly',
   libraries: ['geometry', 'places'],
 });
@@ -30,7 +30,7 @@ const GMap = () => {
   const createMarker = (pos, map, name) => {
     const marker = new maps.Marker({
       position: pos,
-      icon: 'images/shop-icon.png',
+      icon: `${process.env.PUBLIC_URL}/images/shop-icon.png`,
       map: map,
       title: name,
     });
